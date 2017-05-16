@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 class Project extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class Project extends React.Component {
             <img src={this.props.image} alt=""/>
           </span>
         <header className="major">
-          <h3><a href={this.props.pageUrl} className="link">{this.props.title}</a></h3>
+          <h3><Link to={"/projekt" + this.props.name} className="link">{this.props.title}</Link></h3>
           <p>{this.props.description}</p>
         </header>
       </article>

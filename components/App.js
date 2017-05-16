@@ -1,12 +1,9 @@
 import React from 'react'
 
-import Header from './Header'
-import Navbar from './Navbar'
+import Layout from './Layout'
 import Banner from './Banner'
 import AboutServicesSection from './AboutServicesSection'
 import ProjectList from './ProjectList'
-import Contact from './Contact'
-import Footer from './Footer'
 
 import Content from './Content'
 
@@ -20,15 +17,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="wrapper">
-        <Header/>
-        <Navbar/>
+      <Layout>
         <Banner/>
         <AboutServicesSection/>
         <ProjectList/>
-        <Contact/>
-        <Footer/>
-      </div>
+      </Layout>
     )
   }
 }
