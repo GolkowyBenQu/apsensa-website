@@ -1,8 +1,10 @@
+const path = require('path')
+
 const config = {
   entry: './main.js',
 
   output: {
-    path: __dirname,
+    path: path.join(__dirname, 'dist'),
     filename: 'index.js'
   },
 
