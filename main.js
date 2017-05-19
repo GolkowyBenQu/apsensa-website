@@ -7,10 +7,10 @@ import promiseMiddleware from 'redux-promise-middleware'
 
 import App from './components/App'
 import ProjectDetails from './components/ProjectDetails'
-import repositoryReducers from './reducers/repositoryReducers'
+import projectReducers from './reducers/projectReducers'
 
 const reducers = combineReducers({
-  repositoryReducers
+  projectReducers
 })
 
 const store = createStore(

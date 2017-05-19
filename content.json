@@ -1,0 +1,14 @@
+{
+  "title": "Apsensa",
+  "about": "Jesteśmy Apsensa itd",
+  "projects": [
+    {
+      "name": "maxfliz",
+      "description": "opis maxflizu"
+    },
+    {
+      "name": "eurobid",
+      "description": "opis eurobidu"
+    }
+  ]
+}
