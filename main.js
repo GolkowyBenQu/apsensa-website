@@ -8,9 +8,11 @@ import promiseMiddleware from 'redux-promise-middleware'
 import App from './components/App'
 import ProjectDetails from './components/ProjectDetails'
 import projectReducers from './reducers/projectReducers'
+import projectDetailsReducers from './reducers/projectDetailsReducers'
 
 const reducers = combineReducers({
-  projectReducers
+  projectReducers,
+  projectDetailsReducers
 })
 
 const store = createStore(
