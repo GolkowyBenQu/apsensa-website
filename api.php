@@ -32,6 +32,35 @@ class Api
             }
         }
     }
+
+    public function sendMessage()
+    {
+        $requestBody = file_get_contents('php://input');
+        $requestBody = json_decode($requestBody);
+
+        if (
+            empty($requestBody->name) ||
+            empty($requestBody->email) ||
+            empty($requestBody->message)
+        ) {
+            throw new \Exception('Niepoprawne dane');
+        }
+
+        $contactEmail = 'hello@apsensa.pl';
+        $to = $contactEmail;
+        $subject = 'Nowa wiadomość od klienta Apsensy';
+        $message = 'Nowa wiadomość od klienta zainteresowanego ofertą. <br/><br/>
+                    Sender data:<br/>Name: ' . $requestBody->name
+            . '<br/>Email: ' . $requestBody->email
+            . '<br/>Message: ' . $requestBody->message . '<br/>';
+        $headers = 'From: apsensa.pl' . "\r\n" .
+            'Reply-To: ' . $contactEmail . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers, $to);
+
+        return 'success';
+    }
 }
 
 $response = '';
